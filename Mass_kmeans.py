@@ -34,6 +34,17 @@ from sklearn.cluster import KMeans
 import warnings
 warnings.filterwarnings('ignore')
 
+
+uploaded_files = st.file_uploader("Upload CSV", type="csv", accept_multiple_files=True)
+if uploaded_files:
+    for file in uploaded_files:
+        file.seek(0)
+    uploaded_data_read = [pd.read_csv(file,encoding='latin-1') for file in uploaded_files]
+    df = pd.concat(uploaded_data_read)
+    
+st.write(df)    
+
+
 st.title("Finding Optimal Location Using Kmeans")
 st.subheader("By Nana Antwi")
 
