@@ -1,6 +1,5 @@
 folium==0.12.1
 GDAL==2.3.3
-geographiclib==1.50
 geojson==2.5.0
 geopandas==0.6.1
 geopy==2.1.0
